@@ -13,9 +13,7 @@ import sys
 import time
 from datetime import datetime, timedelta
 from math import sqrt
-
-#TODO: Delete this import if it is not necessary
-#sys.path.insert(0, '../model/')
+ 
 from Node import Node
 from SimpleNode import SimpleNode
 
@@ -398,56 +396,8 @@ def load_probability_distribution(city_path):
     LOG.info('Loading PROB_DISTRIBUTION ended in {} seconds'.format((datetime.now() - start_time).total_seconds()))
     return matrix[0]
 
-def write_output(output_dict,city):
-    ''' output_dict['user_id']= user_id
-    output_dict['route_index']= route_index
-    output_dict['file_name']= file_name
-    output_dict['total_num_of_tree_nodes']= root.total_num_of_tree_nodes
-    output_dict['optimum_walking_time']= str(optimum_walking_time_and_distance[0])
-    output_dict['is_legal_dict']= is_legal_dict
-    output_dict['user_route_names']= user_route_names
-    output_dict['best_route_names']= best_route_names
-    output_dict['best_ndcg']= best_ndcg
-    output_dict['best_jaccard']= best_jaccard
-    output_dict['best_route_reward']= b_reward
-    output_dict['best_route_reward_time']= b_reward_time
-    output_dict['best_route_ranking']= b_ranking
-    output_dict['best_route_ranking_time']= b_ranking_time
-    output_dict['org_route_reward']= o_reward
-    output_dict['org_route_reward_time']= o_reward_time
-    output_dict['org_route_ranking']= o_ranking
-    output_dict['org_route_ranking_time']= o_ranking_time'''
+def write_output(output_dict,city): 
     with open('../../evaluation/'+city+'/'+output_dict['file_name']+'_'+output_dict['optimum_walking_time'], 'a+',encoding='utf-8') as myfile:
-        myfile.writelines(str(output_dict) + '\n')
-    #LOG.info('  [{}]-{}'.format(output_dict['route_index'], output_dict))
+        myfile.writelines(str(output_dict) + '\n') 
 
-def clear_experiment_result_files(optimum_walking_distance):
-    start_time = datetime.now()
-    LOG.info('Clearing EVALUATION FILES')
-    arr = os.listdir('eval/var_leftout_' + str(optimum_walking_distance[0]) + '/')
-    for fl_name in arr:
-        path = 'eval/var_leftout_' + str(optimum_walking_distance[0]) + '/' + fl_name
-        if os.path.isfile(path):
-            os.remove(path)
-
-    LOG.info('Clearing EVALUATION FILES ended in {} seconds'.format((datetime.now() - start_time).total_seconds()))
-
-# TODO: check out if this function is necessary
-def arrange_checkin_lists_by_min(checkin_list, min_checkin_number):
-    # Example check in date : 2018-12-08 13:00:43
-
-    [checkin.append(datetime.strptime(checkin[3], '%Y-%m-%d %H:%M:%S')) for checkin in checkin_list]
-    checkin_list.sort(key=lambda x: x[-1])
-
-    checkin_dict = dict()
-    for checkin in checkin_list:
-        dt = str(checkin[-1].date())
-        if dt in checkin_dict:
-            checkin_dict[dt].append(checkin)
-        else:
-            checkin_dict[dt] = [checkin]
-
-    new_checkin_dict = [{'start': v[0][-1], 'end': v[-1][-1], 'checkins': v} for k, v in checkin_dict.items() if
-                        len(v) >= min_checkin_number]
-
-    return new_checkin_dict
+ 

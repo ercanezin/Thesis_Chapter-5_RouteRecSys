@@ -1,17 +1,17 @@
-# Route_RecSys_thesis
+# Route RecSys Code for Chapter 6
 
 This repository is created for Chapter 6 of thesis titled 'Towards Context-Aware Recommender Systems for Tourists'.
 
 Running the files:
 
-You need Python 3.7 and higher to run the codes and you need the latest version of the following packages to run both codes and jupyter notebook. 
+You need Python 3.7 and higher to run the codes and you need the latest version of the following packages to run both codes and jupyter notebook. The list of this package is in requirements.txt file. Please use pip to install it.
  
-numpy 
-pandas
-matplotlib
-sklearn
-jupyter 
-fastread 
+numpy, 
+pandas,
+matplotlib,
+sklearn,
+jupyter,
+fastread, 
 
 Files and their usage
 
