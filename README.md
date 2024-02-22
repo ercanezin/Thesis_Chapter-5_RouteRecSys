@@ -1,9 +1,9 @@
 <div align="center">   
 
-# # Route RecSys Code for Chapter 6
+# # Route RecSys Code for Chapter 5
 </div>
 
-This repository is created for Chapter 6 of thesis titled 'Towards Context-Aware Recommender Systems for Tourists'.
+This repository is created for Chapter 5 of the thesis titled 'Towards Context-Aware Recommender Systems for Tourists'.
 
 
 # Abstract 
@@ -13,7 +13,7 @@ The chapter presents the last piece of the evolution of this thesis. This work p
 
 # Getting Started
   
-  You need Python 3.7 and higher to run the codes and you need the latest version of the following packages to run both codes and jupyter notebook. The list of this package is in requirements.txt file. Please use pip to install it.
+  You need Python 3.7 and higher to run the codes and you need the latest version of the following packages to run both codes and jupyter notebook. The list of this package is in the requirements.txt file. Please use pip to install it.
  
 	numpy, 
 	pandas,
@@ -24,12 +24,12 @@ The chapter presents the last piece of the evolution of this thesis. This work p
 
 	Files and their usage
 
-	codes -- Contains codes to run algothms. main.py is the location where everything starts.
+	codes -- Contains codes to run algorithms. main.py is the location where everything starts.
 	datasets -- Contains the latest version of the datasets for two cities
 	evaluation -- Contains experiment results
 	notebooks -- Contains notebook for data analysis and exploration. 
 
-	If you have any question, please get in touch from ezinercan@gmail.com
+	If you have any questions, please get in touch with ezinercan@gmail.com
 
 # Bibtex
 If this work is helpful for your research, please consider citing  
